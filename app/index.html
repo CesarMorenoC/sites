@@ -19,12 +19,14 @@
       .padded-box { padding: 1.5rem 2rem 0rem 2rem; }
       .padded-box-img { padding: 1.5rem 2rem 0rem 1rem; }
       .grey-box { background-color:  #d7d7d5; }
-      ol { counter-reset:li; margin-left:0; padding-left:0; }
+      /* Ordered list: Begin */
+      ol { margin-left:0; padding-left:0; }
       ol > li { position:relative; margin:0 0 6px 2em; padding:4px 8px; list-style:none; }
-      ol > li:before { counter-increment: mycounter; content:counter(mycounter) ". "; position:absolute; top:-6px; left:-2em; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; width:2em; margin:8px 8px 0px 0px; padding:4px; color: #ffd300; font-weight:bold; text-align:center; }
-      ol:first-of-type { counter-reset: mycounter; }
+      ol > li:before { counter-increment: counter; content:counter(counter) ". "; position:absolute; top:-6px; left:-2em; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; width:2em; margin:8px 8px 0px 0px; padding:4px; color: #ffd300; font-weight:bold; text-align:center; }
+      ol:first-of-type { counter-reset: counter; }
       li ol, li ul { margin-top:6px; }
       ol ol li:last-child { margin-bottom:0; }
+      /* Ordered list: End */
       /* Styles override */
       .phone-text { color: #00448c; font-weight: 600; }
       .container { max-width: 600px !important; }
@@ -42,7 +44,6 @@
       </div>
       <div class="tile is-ancestor is-outlined">
         <div class="layer">
-          <p class="title">Image</p>
         </div>
       </div>
       <div class="tile is-ancestor is-light">
