@@ -1,0 +1,6 @@
+.counter {
+  button {
+    @extend .btn, .btn-outline-secondary;
+    margin: 0 5px;
+  }
+}
