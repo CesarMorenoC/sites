@@ -9,143 +9,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
   <title>Bulma Sandbox</title>
   <style>
-    .upper-header { height: 35px !important; }
-    .upper-header p { margin-bottom: 0; }
-
-    .yellow-box {
-      background-color: #ffd200;
-      color: #fff;
-      font-weight: bold;
-      border: 0px;
-      height: 1.5rem;
-    }
-
-    .footer-text {
-      font-size: 0.75em;
-    }
-
-    .center-text {
-      padding-top: 3em;
-      padding-bottom: 3em;
-      vertical-align: middle;
-      text-align: center;
-    }
-
-    .center-img {
-      padding-top: .2rem;
-      padding-bottom: .2rem;
-      vertical-align: middle;
-      text-align: center;
-    }
-
-    .bold-text {
-      font-weight: bold;
-      color: #666666;
-      font-size: 14px;
-      font-weight: 700;
-    }
+    .grey-box { background-color: #d7d7d5; }
+    .yellow-box { background-color: #ffd200; color: #fff; font-weight: bold; border: 0px; height: 1.5rem; }
+    .footer-text { font-size: 0.75em; }
+    .center-text { padding-top: 3em; padding-bottom: 3em; vertical-align: middle; text-align: center; }
+    .center-img { padding-top: .2rem; padding-bottom: .2rem; vertical-align: middle; text-align: center; }
+    .bold-text { font-weight: bold; color: #666666; font-size: 14px; font-weight: 700; }
 
     .padded-box {
       padding: 1.5rem 2rem 0rem 2rem;
     }
 
-    .padded-box-img {
-      padding: 1.5rem 2rem 0rem 1rem;
-    }
-
-    .grey-box {
-      background-color: #d7d7d5;
-    }
-
     /* Ordered list: Begin */
+    ol{ counter-reset: item; }
+    ol li{ font: 14px/21px Arial, Verdana; list-style: none; *list-style:decimal; padding:4px 12px; }
+    ol li:before { display: inline-block; content: counter(item) ". "; counter-increment: item; color: #ffd200; font: bold 16px Arial, Verdana; margin: 0 4px; margin-left: -17px; }
+    ol li ol li:before{ font: bold 14px Arial, Verdana; padding: 0 2px; }
+    body { font-family: Arial !important; color: #666666 !important; font-size: 14px !important; font-weight: 400 !important; }
 
-    ol {
-      margin-left: 0;
-      padding-left: 0;
-    }
-
-    ol>li {
-      position: relative;
-      margin: 0 0 6px 2em;
-      padding: 4px 8px;
-      list-style: none;
-    }
-
-    ol>li:before {
-      counter-increment: counter;
-      content: counter(counter) ". ";
-      position: absolute;
-      top: -6px;
-      left: -2em;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      width: 2em;
-      margin: 8px 8px 0px 0px;
-      padding: 4px;
-      color: #ffd300;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    ol:first-of-type {
-      counter-reset: counter;
-    }
-
-    li ol,
-    li ul {
-      margin-top: 6px;
-    }
-
-    ol ol li:last-child {
-      margin-bottom: 0;
-    }
-
-
-    .layer>img {
-      width: 100%;
-    }
-
-    /* Ordered list: End */
+    .layer>img { width: 100%; }
 
     /* Styles override */
+    .phone-text { color: #00448c; font-weight: 600; }
+    .container { max-width: 600px !important; }
+    .tile.is-parent { padding: 0.25rem !important; }
+    .subtitle { font-size: 18px; font-weight: 700; }
+    .button { width: 148px; height: 29px; color: #191919 !important; font-weight: 600 !important; margin-bottom: 20px; }
+    .tile.is-vertical>.tile.is-child:not(:last-child) { margin-bottom: 0rem !important; }
 
-    .phone-text {
-      color: #00448c;
-      font-weight: 600;
-    }
-
-    .container {
-      max-width: 600px !important;
-    }
-
-    .tile.is-parent {
-      padding: 0.25rem !important;
-    }
-
-    .subtitle {
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .button {
-      width: 148px;
-      height: 29px;
-      color: #191919 !important;
-      font-weight: 600 !important;
-      margin-bottom: 20px;
-    }
-
-    .tile.is-vertical>.tile.is-child:not(:last-child) {
-      margin-bottom: 0rem !important;
-    }
-
-    body {
-      font-family: Arial !important;
-      color: #666666 !important;
-      font-size: 14px !important;
-      font-weight: 400 !important;
-    }
   </style>
 </head>
 
@@ -155,7 +46,7 @@
     <div class="layer">
       <img src="../public/header.png" alt="">
     </div>
-    <section class="section">
+    <section class="section" style="padding-bottom: 1rem;">
       <div class="container">
         <p class="subtitle">Hola Douglas,</p>
         <p class="has-text-justified">Sabemos que para ti es muy importante hacer seguimiento a tus inversiones, por esto, hemos dispuesto una funcionalidad
@@ -169,7 +60,7 @@
         <span class="bold-text">INVERSIONES</span>
       </p>
     </div>
-    <section class="section">
+    <section class="section" style="padding-bottom: 1rem; padding-top: 38px; ">
       <div class="container">
           <ol>
             <div class="tile is-ancestor">
@@ -188,7 +79,7 @@
               <div class="tile is-parent is-6">
                   <div class="tile is-child is-6">
                     <figure class="center-img">
-                      <img style="width: 111px; height: 69px;" src="../public/login_screen.png" />
+                      <img src="../public/login_screen.png" />
                     </figure>
                   </div>
                   <div class="tile is-child is-6">
@@ -207,7 +98,7 @@
               </div>
               <div class="tile is-parent is-6 is-vertical">
                 <figure class="center-img">
-                  <img style="width: 111px; height: 69px;" src="../public/login_screen.png" />
+                  <img src="../public/login_screen.png" />
                 </figure>
                 <div class="tile is-child">
                   <li>Ingresar a InvesBot. Una vez te encuentres alli, ubica la opcion "Mis planes" y haz clic en "Ver Analytics".</li>
@@ -218,27 +109,27 @@
       </div>
     </section>
     <div class="tile is-ancestor">
-      <div class="tile is-parent is-vertical yellow-box">
-        <div class="tile is-child has-text-centered">
-          <p>ACTUALIZATE</p>
+      <div class="tile is-parent is-vertical" style="padding:0px !important;">
+        <div class="yellow-box has-text-centered" style="padding-top: 5px; padding-bottom: 25px;">
+          <span>ACTUALIZATE</span>
         </div>
-        <div class="tile is-child has-text-centered">
-          <figure class="image">
-            <img style="width: 301px; height: 169px;" src="../public/actualizate.png">
-          </figure>
+        <div class="center-img" style="padding: 0px;">
+          <img style="width: 100%;" src="../public/actualizate.png">
         </div>
       </div>
-      <div class="tile is-parent is-vertical grey-box">
-        <div class="tile is-child padded-box">
-          <p>
-            <span class="subtitle">Pensando en ti</span>
-            <br/>
-            <br/> Hemos creado un divertido juego que nos ayudara a entender tu toleracia al riesgo.
-          </p>
-        </div>
-        <div class="tile is-child has-text-centered">
-          <a class="button yellow-box">Comienza a jugar</a>
-        </div>
+      <div class="tile is-parent is-vertical grey-box" style="padding:0px !important;">
+        <section class="section" style="padding-bottom: 0px; padding-top: 1.75rem;">
+          <div class="container">
+              <span class="subtitle">Pensando en ti</span>
+              <p>
+                
+                Hemos creado un divertido juego que nos ayudara a entender tu toleracia al riesgo.
+              </p>
+              <div class="tile is-child has-text-centered">
+                  <a class="button yellow-box">Comienza a jugar</a>
+              </div>
+          </div>
+        </section>
       </div>
     </div>
     <p class="has-text-centered center-text">
