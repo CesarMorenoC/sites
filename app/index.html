@@ -12,23 +12,16 @@
     .grey-box { background-color: #d7d7d5; }
     .yellow-box { background-color: #ffd200; color: #fff; font-weight: bold; border: 0px; height: 1.5rem; }
     .footer-text { font-size: 0.75em; }
-    .center-text { padding-top: 3em; padding-bottom: 3em; vertical-align: middle; text-align: center; }
-    .center-img { padding-top: .2rem; padding-bottom: .2rem; vertical-align: middle; text-align: center; }
+    .center-text { padding-top: 3em; padding-bottom: 3em; vertical-align: middle; text-align: -webkit-center; text-align: -moz-center }
+    .center-img { padding-top: .2rem; padding-bottom: .2rem; vertical-align: middle; text-align: -webkit-center; text-align: -moz-center }
     .bold-text { font-weight: bold; color: #666666; font-size: 14px; font-weight: 700; }
-
-    .padded-box {
-      padding: 1.5rem 2rem 0rem 2rem;
-    }
-
+    .layer>img { width: 100%; }
     /* Ordered list: Begin */
     ol{ counter-reset: item; }
-    ol li{ font: 14px/21px Arial, Verdana; list-style: none; *list-style:decimal; padding:4px 12px; }
+    ol li{ font: 14px/21px Arial, Verdana; list-style: none; *list-style:decimal; padding:4px 12px; margin-left: 5px; }
     ol li:before { display: inline-block; content: counter(item) ". "; counter-increment: item; color: #ffd200; font: bold 16px Arial, Verdana; margin: 0 4px; margin-left: -17px; }
     ol li ol li:before{ font: bold 14px Arial, Verdana; padding: 0 2px; }
     body { font-family: Arial !important; color: #666666 !important; font-size: 14px !important; font-weight: 400 !important; }
-
-    .layer>img { width: 100%; }
-
     /* Styles override */
     .phone-text { color: #00448c; font-weight: 600; }
     .container { max-width: 600px !important; }
@@ -39,7 +32,6 @@
 
   </style>
 </head>
-
 <body>
   <div class="container">
     <div class="yellow-box" style="margin-bottom: 10px;"></div>
@@ -56,8 +48,7 @@
       </div>
     </section>
     <div class="yellow-box">
-      <p style="padding: 0 1.7rem">SIGUE TUS
-        <span class="bold-text">INVERSIONES</span>
+      <p style="padding: 0 1.7rem"><span class="bold-text">SIGUE TUS </span>INVERSIONES
       </p>
     </div>
     <section class="section" style="padding-bottom: 1rem; padding-top: 38px; ">
@@ -90,7 +81,7 @@
             <div class="tile is-ancestor">
               <div class="tile is-parent is-6 is-vertical">
                 <figure class="center-img">
-                  <img src="../public/pc_bancolombia.png" />
+                  <img src="../public/transacciones.png" />
                 </figure>
                 <div class="tile is-child">
                     <li>Ubica la opcion "Transacciones" en el menu superior y a continuacion "InvesBot".</li>
@@ -98,7 +89,7 @@
               </div>
               <div class="tile is-parent is-6 is-vertical">
                 <figure class="center-img">
-                  <img src="../public/login_screen.png" />
+                  <img src="../public/plan.png" />
                 </figure>
                 <div class="tile is-child">
                   <li>Ingresar a InvesBot. Una vez te encuentres alli, ubica la opcion "Mis planes" y haz clic en "Ver Analytics".</li>
