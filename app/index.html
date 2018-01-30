@@ -5,32 +5,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
-  <title>Invesbot</title>
+  <title>Bancolombia Invesbot</title>
   <style>
-    .grey-box { background-color: #d7d7d5; }
+    .grey-box { background-color: #d7d7d5; height: 98%; }
     .yellow-box { background-color: #ffd200; color: #fff; font-weight: bold; border: 0px; height: 1.5rem; }
     .footer-text { font-size: 0.75em; }
-    .center-text { padding-top: 3em; padding-bottom: 3em; vertical-align: middle; text-align: -webkit-center; text-align: -moz-center }
-    .center-img { padding-top: .2rem; padding-bottom: .2rem; vertical-align: middle; text-align: -webkit-center; text-align: -moz-center }
+    .center-text { padding-top: 3em; padding-bottom: 3em; }
+    .center-img { padding-top: .75rem; padding-bottom: .75rem; vertical-align: middle; text-align: -webkit-center; text-align: -moz-center; }
+    .center-img > img { max-width: 160px; }
+    .center.img.col { width: 40px; }
     .bold-text { font-size: 14px; font-weight: 700; color: #5b5b5f; }
     .bold-text-black { font-size: 14px; font-weight: 700; color: #000; }
     .layer>img { width: 100%; }
-    /* Ordered list: Begin */
-    ol{ counter-reset: item; }
-    ol li{ font: 14px/21px Arial, Verdana; list-style: none; *list-style:decimal; padding:4px 12px; margin-left: 5px; }
-    ol li:before { display: inline-block; content: counter(item) ". "; counter-increment: item; color: #ffd200; font: bold 16px Arial, Verdana; margin: 0 4px; margin-left: -17px; }
-    ol li ol li:before{ font: bold 14px Arial, Verdana; padding: 0 2px; }
-    body { font-family: Arial !important; color: #666 !important; font-size: 14px !important; font-weight: 400 !important; }
-    /* Styles override */
     .phone-text { color: #00448c; font-weight: 600; }
-    .container { max-width: 600px !important; }
-    .tile.is-parent { padding: 0.25rem !important; }
+
+    /* Styles override */
+    .container { margin: 0 auto; position: relative; max-width: 600px !important; }
+    .has-text-centered { text-align: center !important; }
     .subtitle { font-size: 18px; font-weight: 700; color: #5b5b5f; }
-    .button { width: 148px; height: 29px; color: #191919 !important; font-weight: 600 !important; margin-bottom: 20px; }
-    .tile.is-vertical>.tile.is-child:not(:last-child) { margin-bottom: 0rem !important; }
-    .section { padding: 2rem 1.5rem; }
+    .button { -moz-appearance: none; -webkit-appearance: none; -webkit-box-align: center; -ms-flex-align: center; align-items: center; border: 1px solid transparent; border-radius: 3px; -webkit-box-shadow: none; box-shadow: none;
+              display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex; font-size: 1rem; -webkit-box-pack: start; -ms-flex-pack: start; line-height: 1.5;
+              padding-bottom: calc(0.3em - 1px); padding-left: calc(0.5em - 1px); padding-right: calc(0.5em - 1px); padding-top: calc(0.3em - 1px);
+              -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; background-color: #ffd200; color: #191919; font-weight: 600; cursor: pointer; -webkit-box-pack: center; -ms-flex-pack: center;
+              justify-content: center; text-align: center; width: 135px; text-decoration: none !important; }
+    .button:hover { text-decoration: none; color: #191919; }
+
+    /* Central boxes with responsive behaviour */
+    .number { color: #ffd200; font: 700 16px Arial, Verdana; padding-left: 5px; padding-right: 5px; }
+    .column { width: 50%; }
+    .display { display: flex; }
+
+    body { font-family: Arial !important; color: #666 !important; font-size: 14px !important; font-weight: 400 !important; }
+    section { display: block; padding: 20px 20px 5px 20px; }
+    table { width: 100%; border-collapse: collapse; }
+    table.center { margin: 25px 0px; }
   </style>
 </head>
 <body>
@@ -41,7 +49,7 @@
     </div>
     <section class="section" style="padding-bottom: 1rem;">
       <div class="container">
-        <p class="bold-text-black">Hola Douglas,</p>
+        <p class="bold-text-black">Hola {{user_name}},</p>
         <p class="has-text-justified">Sabemos que para ti es muy importante hacer seguimiento a tus inversiones, por esto, hemos dispuesto una funcionalidad
           que te permite ver que tan cerca estas de cumplir la meta que te propusiste y el comportamiento que ha tenido tu
           dinero en el tiempo.
@@ -49,80 +57,114 @@
       </div>
     </section>
     <div class="yellow-box">
-      <p style="padding: 0 1.7rem"><span class="bold-text">SIGUE TUS </span>INVERSIONES
+      <p style="padding: 0.2rem 1.7rem"><span class="bold-text">SIGUE TUS </span>INVERSIONES
       </p>
     </div>
-    <section class="section" style="padding-bottom: 1rem; padding-top: 38px; ">
-      <div class="container">
-          <ol>
-            <div class="tile is-ancestor">
-              <div class="tile is-parent is-6">
-                <div class="tile is-child is-6">
-                  <figure class="center-img">
-                    <img src="https://gallery.mailchimp.com/fbdd4920680112032f5f7e90e/images/2996ee8f-053f-494f-9436-a24f335eda30.png" />
-                  </figure>
-                </div>
-                <div class="tile is-child is-6">
-                    <li>Ingresa a la
-                        <span class="bold-text">Sucursal Virtual de Valores Bancolombia</span>
-                    </li>
-                </div>
-              </div>
-              <div class="tile is-parent is-6">
-                  <div class="tile is-child is-6">
-                    <figure class="center-img">
-                      <img src="https://gallery.mailchimp.com/fbdd4920680112032f5f7e90e/images/b3f2baec-da92-4a61-88b0-378411054264.png" />
-                    </figure>
+    <div class="clear-fix middle"></div>
+    <table class="center">
+      <tr>
+        <td colspan="2">
+          <table>
+            <tr class="display" style="padding-left: 20px; ">
+              <td class="column display">
+                <table>
+                  <tr>
+                    <td class="center-img col">
+                        <img style="max-width: 90%" src="https://gallery.mailchimp.com/fbdd4920680112032f5f7e90e/images/2996ee8f-053f-494f-9436-a24f335eda30.png"/>
+                    </td>
+                    <td class="number">1.</td>
+                    <td>Ingresa a la <span class="bold-text">Sucursal Virtual de Valores Bancolombia</span></td>
+                  </tr>
+                </table>
+              </td>
+              <td class="column display">
+                <table>
+                  <tr>
+                    <td class="center-img col">
+                        <img src="https://gallery.mailchimp.com/fbdd4920680112032f5f7e90e/images/b3f2baec-da92-4a61-88b0-378411054264.png"/>
+                    </td>
+                    <td class="number">2.</td>
+                    <td>Autentícate con tu usuario y contraseña.</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr class="display">
+        <td class="column">
+          <table>
+            <tr style="margin-bottom: 10px;">
+              <td class="center-img">
+                <img src="https://gallery.mailchimp.com/fbdd4920680112032f5f7e90e/images/3f6b9d4f-bfa3-474e-bac5-cb7a5d8bb754.png"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                      <td class="number">3.</td>
+                      <td>Ubica la opción "Transacciones" en el menú superior y a continuación "InvesBot".</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td class="column">
+          <table>
+            <tr>
+              <td class="center-img">
+                <img src="https://gallery.mailchimp.com/fbdd4920680112032f5f7e90e/images/617441b3-d076-4691-a6f4-b303df401a76.png"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td class="number">4.</td>
+                    <td>Ingresar a InvesBot. Una vez te encuentres allí, ubica la opción "Mis planes" y haz clic en "Ver Analytics"</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <div class="clear-fix middle"></div>
+    <table>
+      <tr class="display">
+        <td class="column">
+          <table>
+              <tr class="yellow-box has-text-centered" >
+                  <td>ACTUALIZATE</td>
+              </tr>
+              <tr>
+                <td>
+                  <img style="height: 100%; width: 100%;" src="https://gallery.mailchimp.com/fbdd4920680112032f5f7e90e/images/1f1a7778-dfdd-491e-957d-6b91521a9dbf.png" />
+                </td>
+              </tr>
+          </table>
+        </td>
+        <td class="column">
+          <table class="grey-box">
+            <tr>
+              <td>
+                  <div class="subtitle has-text-centered" style="padding-top: 1rem">Pensando en ti</div>
+                  <p style="padding-left: 1.5rem; padding-right: 1rem">
+                    Hemos creado un divertido juego que nos ayudara a entender tu toleracia al riesgo.
+                  </p>
+                  <div class="has-text-centered">
+                    <a class="button yellow-box bold-text-black" href="https://bart.invesbot.co/invesbot.html">Comienza a jugar</a>
                   </div>
-                  <div class="tile is-child is-6">
-                      <li>Autentícate con tu usuario y contraseña.</li>
-                  </div>
-                </div>
-            </div>
-            <div class="tile is-ancestor">
-              <div class="tile is-parent is-6 is-vertical">
-                <figure class="center-img">
-                  <img src="https://gallery.mailchimp.com/fbdd4920680112032f5f7e90e/images/3f6b9d4f-bfa3-474e-bac5-cb7a5d8bb754.png" />
-                </figure>
-                <div class="tile is-child">
-                    <li>Ubica la opción "Transacciones" en el menú superior y a continuación "InvesBot".</li>
-                </div>
-              </div>
-              <div class="tile is-parent is-6 is-vertical">
-                <figure class="center-img">
-                  <img src="https://gallery.mailchimp.com/fbdd4920680112032f5f7e90e/images/617441b3-d076-4691-a6f4-b303df401a76.png" />
-                </figure>
-                <div class="tile is-child">
-                  <li>Ingresar a InvesBot. Una vez te encuentres allí, ubica la opción "Mis planes" y haz clic en "Ver Analytics".</li>
-                </div>
-              </div>
-            </div>
-          </ol>
-      </div>
-    </section>
-    <div class="tile is-ancestor">
-      <div class="tile is-parent is-vertical" style="padding:0px !important;">
-        <div class="yellow-box has-text-centered" style="padding-top: 5px; padding-bottom: 25px;">
-          <span>ACTUALÍZATE</span>
-        </div>
-        <div class="center-img" style="padding: 0px;">
-          <img style="width: 100%;" src="https://gallery.mailchimp.com/fbdd4920680112032f5f7e90e/images/1f1a7778-dfdd-491e-957d-6b91521a9dbf.png">
-        </div>
-      </div>
-      <div class="tile is-parent is-vertical grey-box" style="padding:0px !important;">
-        <section class="section" style="padding-bottom: 0px; padding-top: 1.75rem;">
-          <div class="container">
-              <span class="subtitle">Pensando en ti</span>
-              <p>
-                Hemos creado un divertido juego que nos ayudara a entender tu toleracia al riesgo.
-              </p>
-              <div class="tile is-child has-text-centered">
-                  <a class="button yellow-box bold-text-black" href="https://bart.invesbot.co/invesbot.html">Comienza a jugar</a>
-              </div>
-          </div>
-        </section>
-      </div>
-    </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
     <p class="has-text-centered center-text">
       Tu retroalimentación es muy importante para nosotros, gracias a ella podremos mejorar la experiencia de nuestra solución.
       Te invitamos a que nos compartas tus apreciaciones a través del buzón
@@ -151,15 +193,15 @@
           <span class="phone-text">+57 (1)343 0000</span> - Medellín
           <span class="phone-text">+57 (4)510 9000</span> - Cali
           <span class="phone-text">+57 (2)554 0505</span>
-          <br /> Barranquilla
+          <br/> Barranquilla
           <span class="phone-text">+57 (1)343 0000</span> - Bucaramanga
           <span class="phone-text">+57 (4)510 9000</span> - Cartagena
           <span class="phone-text">+57 (2)554 0505</span>
-          <br /> Resto del país
+          <br/> Resto del país
           <span class="phone-text">+57 (1)343 0000</span>
-          <br /> Sede principal
+          <br/> Sede principal
           <a href="#">Cra. 48 Nro. 26-85</a> Torre Norte
-          <br /> Medellín - Colombia
+          <br/> Medellín - Colombia
         </p>
       </div>
     </section>
